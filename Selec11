@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Ej_11_pseudocodigo_menor_de_tres_numeros {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double N1 = 0.0;
+        double N2 = 0.0;
+        double N3 = 0.0;
+        double MEN = 0.0;
+
+        // Ejercicio: pseudocódigo menor de tres numeros
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese el primer numero:"));
+        N1 = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese el segundo numero:"));
+        N2 = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese el tercer numero:"));
+        N3 = sc.nextDouble();
+        // Proceso y cálculos
+        if (N1 <= N2  &&  N1 <= N3) {
+            MEN = N1;
+        } else {
+            if (N2 <= N1  &&  N2 <= N3) {
+                MEN = N2;
+            } else {
+                MEN = N3;
+            }
+        }
+        System.out.println(String.valueOf("El menor de los tres numeros es: ") + String.valueOf(MEN));
+    }
+}
