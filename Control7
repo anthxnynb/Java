@@ -1,0 +1,53 @@
+import java.util.Scanner;
+public class Ej_07_Descuentos_por_categoria_y_volumen {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int O = 0;
+        int C = 0;
+        double P = 0.0;
+        double D = 0.0;
+        double T = 0.0;
+
+        // Ejercicio: Descuentos por categoría y volumen
+        // Fuente: Problemas Switch/Match, problema 2
+        // Categoria, cantidad y precio unitario
+        System.out.println(String.valueOf("Categoria: 1 Electronica, 2 Ropa, 3 Alimentos, 4 Otros"));
+        O = sc.nextInt();
+        System.out.println(String.valueOf("Cantidad:"));
+        C = sc.nextInt();
+        System.out.println(String.valueOf("Precio unitario:"));
+        P = sc.nextDouble();
+        if (C <= 0  ||  P < 0  ||  O < 1  ||  O > 4) {
+            System.out.println(String.valueOf("Datos invalidos"));
+        } else {
+            // Descuento segun categoria y volumen
+            D = 0;
+            switch (O) {
+                case 1:
+                    if (C >= 10) {
+                        D = 0.05;
+                    }
+                    break;
+                case 2:
+                    if (C >= 5) {
+                        D = 0.10;
+                    }
+                    break;
+                case 3:
+                    D = 0.03;
+                    break;
+                case 4:
+                    D = 0;
+                    break;
+            }
+            T = P * C * (1 - D);
+            if (T > 100) {
+                T = T * 0.98;
+            }
+            System.out.println(String.valueOf("Total a pagar: $") + String.valueOf(T));
+        }
+    }
+}
