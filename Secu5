@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class Ej_05_Cuota_de_prestamo_con_interes_simple {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double C = 0.0;
+        double T = 0.0;
+        double IT = 0.0;
+        double CU = 0.0;
+        int N = 0;
+
+        // Ejercicio: Cuota de préstamo con interés simple
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese el capital:"));
+        C = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese la tasa anual en decimal:"));
+        T = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese el plazo en meses:"));
+        N = sc.nextInt();
+        // Proceso y cálculos
+        if (C < 0  ||  T < 0  ||  N <= 0) {
+            System.out.println(String.valueOf("Datos no validos"));
+        } else {
+            IT = C * T * (N / 12);
+            CU = (C + IT) / N;
+            System.out.println(String.valueOf("Interes total: $") + String.valueOf(IT));
+            System.out.println(String.valueOf("Cuota mensual: $") + String.valueOf(CU));
+        }
+    }
+}
