@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Ej_17_pseudocodigo_Tabla_de_multiplicar_con_for {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int K = 0;
+        int I = 0;
+        int R = 0;
+
+        // Ejercicio: pseudocódigo Tabla de multiplicar con for
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese el numero entero para mostrar su tabla:"));
+        K = sc.nextInt();
+        // Proceso y cálculos
+        for (I = 1; I <= 10; I++) {
+            R = K * I;
+            System.out.println(String.valueOf(K) + String.valueOf(" x ") + String.valueOf(I) + String.valueOf(" == ") + String.valueOf(R));
+        }
+    }
+}
