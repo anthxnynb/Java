@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Ej_02_Clasificacion_de_triangulo_por_angulos {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double A1 = 0.0;
+        double A2 = 0.0;
+        double A3 = 0.0;
+        double SUMA = 0.0;
+        double MAY = 0.0;
+
+        // Ejercicio: Clasificación de triángulo por ángulos
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese el primer angulo:"));
+        A1 = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese el segundo angulo:"));
+        A2 = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese el tercer angulo:"));
+        A3 = sc.nextDouble();
+        // Proceso y cálculos
+        SUMA = A1 + A2 + A3;
+        if (A1 <= 0  ||  A2 <= 0  ||  A3 <= 0  ||  SUMA != 180) {
+            System.out.println(String.valueOf("Error: los angulos no forman un triangulo"));
+        } else {
+            MAY = A1;
+            if (A2 > MAY) {
+                MAY = A2;
+            }
+            if (A3 > MAY) {
+                MAY = A3;
+            }
+            if (MAY < 90) {
+                System.out.println(String.valueOf("El triangulo es acutangulo"));
+            } else {
+                if (MAY == 90) {
+                    System.out.println(String.valueOf("El triangulo es rectangulo"));
+                } else {
+                    System.out.println(String.valueOf("El triangulo es obtusangulo"));
+                }
+            }
+        }
+    }
+}
