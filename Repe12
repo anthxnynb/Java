@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Ej_12_pseudocodigo_factorial_de_un_numero {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = 0;
+        int X = 0;
+        int F = 0;
+
+        // Ejercicio: pseudocódigo factorial de un numero
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese un numero entero"));
+        N = sc.nextInt();
+        // Proceso y cálculos
+        if (N < 0) {
+            System.out.println(String.valueOf("No existe factorial para numeros negativos"));
+        } else {
+            X = N;
+            F = 1;
+            while (X>=1) {
+                F = F*X;
+                X = X-1;
+            }
+            System.out.println(String.valueOf("El factorial del numero es:") + String.valueOf(F));
+        }
+    }
+}
