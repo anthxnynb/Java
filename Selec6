@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Ej_06_Determinacion_de_estacion_del_ano {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int MES = 0;
+        int DIA = 0;
+        int DM = 0;
+        String EST = "";
+
+        // Ejercicio: Determinación de estación del año
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese el mes (1 a 12):"));
+        MES = sc.nextInt();
+        System.out.println(String.valueOf("Ingrese el dia:"));
+        DIA = sc.nextInt();
+        // Proceso y cálculos
+        DM = 31;
+        if (MES == 4  ||  MES == 6  ||  MES == 9  ||  MES == 11) {
+            DM = 30;
+        } else {
+            if (MES == 2) {
+                DM = 28;
+            }
+        }
+        if (MES < 1  ||  MES > 12  ||  DIA < 1  ||  DIA > DM) {
+            System.out.println(String.valueOf("Fecha no valida"));
+        } else {
+            if ((MES == 12  &&  DIA >= 21)  ||  MES == 1  ||  MES == 2  ||  (MES == 3  &&  DIA <= 20)) {
+                EST = "Verano";
+            } else {
+                if ((MES == 3  &&  DIA >= 21)  ||  MES == 4  ||  MES == 5  ||  (MES == 6  &&  DIA <= 20)) {
+                    EST = "Otono";
+                } else {
+                    if ((MES == 6  &&  DIA >= 21)  ||  MES == 7  ||  MES == 8  ||  (MES == 9  &&  DIA <= 22)) {
+                        EST = "Invierno";
+                    } else {
+                        EST = "Primavera";
+                    }
+                }
+            }
+            System.out.println(String.valueOf("La estacion del anio es: ") + String.valueOf(EST));
+        }
+    }
+}
