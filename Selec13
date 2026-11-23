@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class Ej_13_pseudocodigo_Promedio_de_tres_tareas {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double N1 = 0.0;
+        double N2 = 0.0;
+        double N3 = 0.0;
+        double P = 0.0;
+
+        // Ejercicio: pseudocódigo Promedio de tres tareas
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Ingreso y verificacion de la nota uno
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese nota parcial 1"));
+        N1 = sc.nextDouble();
+        // Proceso y cálculos
+        while (N1 < 0  ||  N1 > 10) {
+            System.out.println(String.valueOf("La nota no puede menor que 0 ni mayor a 10"));
+            System.out.println(String.valueOf("Ingrese nota parcial 1"));
+            N1 = sc.nextDouble();
+        }
+        // Ingreso y verificacion de la nota dos
+        System.out.println(String.valueOf("Ingrese nota parcial 2"));
+        N2 = sc.nextDouble();
+        while (N2 < 0  ||  N2 > 10) {
+            System.out.println(String.valueOf("La nota no puede menor que 0 ni mayor a 10"));
+            System.out.println(String.valueOf("Ingrese nota parcial 2"));
+            N2 = sc.nextDouble();
+        }
+        // Ingreso y verificacion de la nota tres
+        System.out.println(String.valueOf("Ingrese nota parcial 3"));
+        N3 = sc.nextDouble();
+        while (N3 < 0  ||  N3 > 10) {
+            System.out.println(String.valueOf("La nota no puede menor que 0 ni mayor a 10"));
+            System.out.println(String.valueOf("Ingrese nota parcial 3"));
+            N3 = sc.nextDouble();
+        }
+        // Calculo del promedio
+        P = (N1+N2+N3)/3;
+        if (P >= 7) {
+            System.out.println(String.valueOf("El estudiante aprueba y su promedio es:") + String.valueOf(P));
+        } else {
+            System.out.println(String.valueOf("El estudiante no aprueba y su promedio es:") + String.valueOf(P));
+        }
+    }
+}
