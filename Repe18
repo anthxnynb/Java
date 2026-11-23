@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Ej_18_Suma_de_la_serie_armonica {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double S = 0.0;
+        int N = 0;
+        int I = 0;
+
+        // Ejercicio: Suma de la serie armónica
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese N:"));
+        N = sc.nextInt();
+        // Proceso y cálculos
+        if (N <= 0) {
+            System.out.println(String.valueOf("N debe ser mayor que cero"));
+        } else {
+            S = 0;
+            for (I = 1; I <= N; I++) {
+                S = S + 1.0 / I;
+            }
+            System.out.println(String.valueOf("Suma de la serie: ") + String.valueOf(S));
+        }
+    }
+}
