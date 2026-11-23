@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Ej_11_pseudocodigo_para_calcular_la_longitud_y_el_area_de_una_circuferencia {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double R = 0.0;
+        double L = 0.0;
+        double A = 0.0;
+
+        // Ejercicio: pseudocódigo para calcular la longitud y el area de una circuferencia
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingresar el radio:"));
+        R = sc.nextDouble();
+        // Proceso y cálculos
+        L = 2*3.14159265*R;
+        A = 3.14159265*Math.pow((R), 2);
+        System.out.println(String.valueOf("La longitud es:") + String.valueOf(L));
+        System.out.println(String.valueOf("El area del circulo es:") + String.valueOf(A));
+    }
+}
