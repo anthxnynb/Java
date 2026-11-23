@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class Ej_01_Bono_por_productividad {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double SB = 0.0;
+        double PRO = 0.0;
+        double PB = 0.0;
+        double BONO = 0.0;
+        double TOT = 0.0;
+
+        // Ejercicio: Bono por productividad
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese el sueldo base:"));
+        SB = sc.nextDouble();
+        // Proceso y cálculos
+        while (SB < 0) {
+            System.out.println(String.valueOf("El sueldo base no puede ser negativo"));
+            System.out.println(String.valueOf("Ingrese el sueldo base:"));
+            SB = sc.nextDouble();
+        }
+        System.out.println(String.valueOf("Ingrese el porcentaje de productividad (0 a 100):"));
+        PRO = sc.nextDouble();
+        while (PRO < 0  ||  PRO > 100) {
+            System.out.println(String.valueOf("La productividad debe estar entre 0 y 100"));
+            System.out.println(String.valueOf("Ingrese el porcentaje de productividad (0 a 100):"));
+            PRO = sc.nextDouble();
+        }
+        if (PRO >= 90) {
+            PB = 20;
+        } else {
+            if (PRO >= 70) {
+                PB = 10;
+            } else {
+                if (PRO >= 50) {
+                    PB = 5;
+                } else {
+                    PB = 0;
+                }
+            }
+        }
+        BONO = SB * (PB / 100);
+        TOT = SB + BONO;
+        System.out.println(String.valueOf("Porcentaje de bono aplicado: ") + String.valueOf(PB) + String.valueOf("%"));
+        System.out.println(String.valueOf("Bono: $") + String.valueOf(BONO));
+        System.out.println(String.valueOf("Total a pagar: $") + String.valueOf(TOT));
+    }
+}
