@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Ej_15_Punto_medio_y_distancia_entre_dos_puntos {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double X1 = 0.0;
+        double Y1 = 0.0;
+        double X2 = 0.0;
+        double Y2 = 0.0;
+        double DIS = 0.0;
+        double XM = 0.0;
+        double YM = 0.0;
+
+        // Ejercicio: Punto medio y distancia entre dos puntos
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese la coordenada x del primer punto:"));
+        X1 = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese la coordenada y del primer punto:"));
+        Y1 = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese la coordenada x del segundo punto:"));
+        X2 = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese la coordenada y del segundo punto:"));
+        Y2 = sc.nextDouble();
+        // Proceso y cálculos
+        DIS = Math.sqrt(Math.pow((X2 - X1), 2) + Math.pow((Y2 - Y1), 2));
+        XM = (X1 + X2) / 2;
+        YM = (Y1 + Y2) / 2;
+        System.out.println(String.valueOf("Distancia entre los puntos: ") + String.valueOf(DIS));
+        System.out.println(String.valueOf("Punto medio: (") + String.valueOf(XM) + String.valueOf(", ") + String.valueOf(YM) + String.valueOf(")"));
+    }
+}
