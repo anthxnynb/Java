@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Ej_11_Menu_basico_de_operaciones {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int O = 0;
+
+        // Ejemplo: Menu de operaciones con control multiple
+        // Fuente: Seleccion Anidada y Switch ampliada, ejemplo switch 2
+        // Este menu solo identifica la operacion elegida, como solicita el ejemplo
+        System.out.println(String.valueOf("1. Sumar"));
+        System.out.println(String.valueOf("2. Restar"));
+        System.out.println(String.valueOf("3. Multiplicar"));
+        System.out.println(String.valueOf("4. Salir"));
+        System.out.println(String.valueOf("Elija una opcion:"));
+        O = sc.nextInt();
+        switch (O) {
+            case 1:
+                System.out.println(String.valueOf("Operacion: Suma"));
+                break;
+            case 2:
+                System.out.println(String.valueOf("Operacion: Resta"));
+                break;
+            case 3:
+                System.out.println(String.valueOf("Operacion: Multiplicacion"));
+                break;
+            case 4:
+                System.out.println(String.valueOf("Saliendo del programa"));
+                break;
+            default:
+                System.out.println(String.valueOf("Opcion no valida"));
+                break;
+        }
+    }
+}
