@@ -1,0 +1,67 @@
+import java.util.Scanner;
+public class Ej_04_Costo_total_de_un_viaje_con_peajes {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double DIS = 0.0;
+        double CON = 0.0;
+        double PCL = 0.0;
+        double LIT = 0.0;
+        double CC = 0.0;
+        double CP = 0.0;
+        double CTP = 0.0;
+        double CT = 0.0;
+        int NP = 0;
+
+        // Ejercicio: Costo total de un viaje con peajes
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese la distancia del viaje en km:"));
+        DIS = sc.nextDouble();
+        // Proceso y cálculos
+        while (DIS <= 0) {
+            System.out.println(String.valueOf("La distancia debe ser mayor que 0"));
+            System.out.println(String.valueOf("Ingrese la distancia del viaje en km:"));
+            DIS = sc.nextDouble();
+        }
+        System.out.println(String.valueOf("Ingrese el rendimiento del auto en km por litro:"));
+        CON = sc.nextDouble();
+        while (CON <= 0) {
+            System.out.println(String.valueOf("El rendimiento debe ser mayor que 0"));
+            System.out.println(String.valueOf("Ingrese el rendimiento del auto en km por litro:"));
+            CON = sc.nextDouble();
+        }
+        System.out.println(String.valueOf("Ingrese el precio del combustible por litro:"));
+        PCL = sc.nextDouble();
+        while (PCL < 0) {
+            System.out.println(String.valueOf("El precio no puede ser negativo"));
+            System.out.println(String.valueOf("Ingrese el precio del combustible por litro:"));
+            PCL = sc.nextDouble();
+        }
+        System.out.println(String.valueOf("Ingrese la cantidad de peajes:"));
+        NP = sc.nextInt();
+        while (NP < 0) {
+            System.out.println(String.valueOf("La cantidad de peajes no puede ser negativa"));
+            System.out.println(String.valueOf("Ingrese la cantidad de peajes:"));
+            NP = sc.nextInt();
+        }
+        System.out.println(String.valueOf("Ingrese el costo unitario de cada peaje:"));
+        CP = sc.nextDouble();
+        while (CP < 0) {
+            System.out.println(String.valueOf("El costo del peaje no puede ser negativo"));
+            System.out.println(String.valueOf("Ingrese el costo unitario de cada peaje:"));
+            CP = sc.nextDouble();
+        }
+        LIT = DIS / CON;
+        CC = LIT * PCL;
+        CTP = NP * CP;
+        CT = CC + CTP;
+        System.out.println(String.valueOf("Litros necesarios: ") + String.valueOf(LIT));
+        System.out.println(String.valueOf("Costo de combustible: $") + String.valueOf(CC));
+        System.out.println(String.valueOf("Costo de peajes: $") + String.valueOf(CTP));
+        System.out.println(String.valueOf("Costo total del viaje: $") + String.valueOf(CT));
+    }
+}
