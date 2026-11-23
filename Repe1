@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Ej_01_Ahorro_con_aportes_variables {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double S = 0.0;
+        double A = 0.0;
+        int N = 0;
+        int I = 0;
+
+        // Ejercicio: Ahorro con aportes variables
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese la cantidad de meses:"));
+        N = sc.nextInt();
+        // Proceso y cálculos
+        if (N <= 0) {
+            System.out.println(String.valueOf("N debe ser mayor que cero"));
+        } else {
+            S = 0;
+            for (I = 1; I <= N; I++) {
+                System.out.println(String.valueOf("Ingrese el aporte del mes ") + String.valueOf(I) + String.valueOf(":"));
+                A = sc.nextDouble();
+                if (A < 0) {
+                    System.out.println(String.valueOf("El aporte no puede ser negativo; se toma como 0"));
+                    A = 0;
+                }
+                S = (S + A) * 1.008;
+                System.out.println(String.valueOf("Saldo del mes ") + String.valueOf(I) + String.valueOf(": $") + String.valueOf(S));
+            }
+            System.out.println(String.valueOf("Saldo final: $") + String.valueOf(S));
+        }
+    }
+}
