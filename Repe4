@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Ej_04_Conversion_de_base_decimal_a_binario_metodo_manual {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int NUM = 0;
+        int RES = 0;
+        String BIN = "";
+
+        // Ejercicio: Conversión de base decimal a binario (método manual)
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese un numero entero decimal no negativo:"));
+        NUM = sc.nextInt();
+        // Proceso y cálculos
+        while (NUM < 0) {
+            System.out.println(String.valueOf("El numero debe ser no negativo"));
+            System.out.println(String.valueOf("Ingrese un numero entero decimal no negativo:"));
+            NUM = sc.nextInt();
+        }
+        BIN = "";
+        if (NUM == 0) {
+            BIN = "0";
+        } else {
+            while (NUM > 0) {
+                RES = NUM % 2;
+                BIN = concat(String.valueOf(RES), BIN);
+                NUM = (int) ((int)Math.floor(NUM / 2));
+            }
+        }
+        System.out.println(String.valueOf("Representacion binaria: ") + String.valueOf(BIN));
+    }
+}
