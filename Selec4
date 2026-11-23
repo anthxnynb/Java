@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Ej_04_Descuento_por_volumen_y_cliente_frecuente {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double M = 0.0;
+        double P = 0.0;
+        double D = 0.0;
+        double T = 0.0;
+        String F = "";
+
+        // Ejercicio: Descuento por volumen y cliente frecuente
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese el monto de compra:"));
+        M = sc.nextDouble();
+        System.out.println(String.valueOf("Es cliente frecuente? (S/N):"));
+        F = sc.next();
+        // Proceso y cálculos
+        if (M < 0  ||  (!F.equals("S")  &&  !F.equals("s")  &&  !F.equals("N")  &&  !F.equals("n"))) {
+            System.out.println(String.valueOf("Datos no validos"));
+        } else {
+            if (M >= 500) {
+                P = 15;
+            } else {
+                if (M >= 300) {
+                    P = 10;
+                } else {
+                    if (M >= 100) {
+                        P = 5;
+                    } else {
+                        P = 0;
+                    }
+                }
+            }
+            if (F.equals("S")  ||  F.equals("s")) {
+                P = P + 5;
+            }
+            D = M * P / 100;
+            T = M - D;
+            System.out.println(String.valueOf("Porcentaje de descuento: ") + String.valueOf(P) + String.valueOf("%"));
+            System.out.println(String.valueOf("Descuento: $") + String.valueOf(D));
+            System.out.println(String.valueOf("Total a pagar: $") + String.valueOf(T));
+        }
+    }
+}
