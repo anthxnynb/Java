@@ -1,0 +1,42 @@
+import java.util.Scanner;
+public class Ej_14_Sistema_de_tarifas_de_taxi {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double KM = 0.0;
+        double TAR = 0.0;
+        double TOT = 0.0;
+        String NOC = "";
+
+        // Ejercicio: Sistema de tarifas de taxi
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese la distancia del viaje en km:"));
+        KM = sc.nextDouble();
+        // Proceso y cálculos
+        while (KM < 0) {
+            System.out.println(String.valueOf("La distancia no puede ser negativa"));
+            System.out.println(String.valueOf("Ingrese la distancia del viaje en km:"));
+            KM = sc.nextDouble();
+        }
+        System.out.println(String.valueOf("Es de noche? Ingrese S o N:"));
+        NOC = sc.next();
+        while (!NOC.equals("S")  &&  !NOC.equals("N")) {
+            System.out.println(String.valueOf("Debe ingresar S o N"));
+            System.out.println(String.valueOf("Es de noche? Ingrese S o N:"));
+            NOC = sc.next();
+        }
+        TAR = 2 + (1.5 * KM);
+        TOT = TAR;
+        if (KM > 10) {
+            TOT = TOT + (TOT * 0.20);
+        }
+        if (NOC.equals("S")) {
+            TOT = TOT + (TOT * 0.30);
+        }
+        System.out.println(String.valueOf("Total a pagar: $") + String.valueOf(TOT));
+    }
+}
