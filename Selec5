@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Ej_05_Determinacion_de_cuadrante {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double X = 0.0;
+        double Y = 0.0;
+
+        // Ejercicio: Determinación de cuadrante
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese la coordenada X:"));
+        X = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese la coordenada Y:"));
+        Y = sc.nextDouble();
+        // Proceso y cálculos
+        if (X == 0  &&  Y == 0) {
+            System.out.println(String.valueOf("El punto esta en el origen"));
+        } else {
+            if (X == 0) {
+                System.out.println(String.valueOf("El punto esta sobre el eje Y"));
+            } else {
+                if (Y == 0) {
+                    System.out.println(String.valueOf("El punto esta sobre el eje X"));
+                } else {
+                    if (X > 0  &&  Y > 0) {
+                        System.out.println(String.valueOf("Primer cuadrante"));
+                    } else {
+                        if (X < 0  &&  Y > 0) {
+                            System.out.println(String.valueOf("Segundo cuadrante"));
+                        } else {
+                            if (X < 0  &&  Y < 0) {
+                                System.out.println(String.valueOf("Tercer cuadrante"));
+                            } else {
+                                System.out.println(String.valueOf("Cuarto cuadrante"));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
