@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Ej_02_Clasificacion_de_temperatura_en_Loja {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double T = 0.0;
+
+        // Ejercicio: Clasificación de temperatura en Loja
+        // Fuente: Semana 6, selección anidada
+        // Entrada
+        System.out.println(String.valueOf("Temperatura en grados Celsius:"));
+        T = sc.nextDouble();
+        // Clasificación con selección anidada
+        if (T < 15) {
+            System.out.println(String.valueOf("Clima frio"));
+        } else {
+            if (T <= 25) {
+                System.out.println(String.valueOf("Clima templado"));
+            } else {
+                System.out.println(String.valueOf("Clima calido"));
+                if (T > 30) {
+                    System.out.println(String.valueOf("Alerta: calor extremo"));
+                }
+            }
+        }
+    }
+}
