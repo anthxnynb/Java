@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Ej_03_Acceso_a_laboratorio_de_computo {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String E = "";
+        String C = "";
+        String A = "";
+
+        // Ejercicio: Acceso a laboratorio de cómputo
+        // Fuente: Semana 6, selección anidada
+        // Datos de estudiante, carne y autorizacion
+        System.out.println(String.valueOf("Es estudiante? (S/N):"));
+        E = sc.next();
+        System.out.println(String.valueOf("Tiene carne vigente? (S/N):"));
+        C = sc.next();
+        System.out.println(String.valueOf("Tiene autorizacion especial? (S/N):"));
+        A = sc.next();
+        if ((!E.equals("S")  &&  !E.equals("N"))  ||  (!C.equals("S")  &&  !C.equals("N"))  ||  (!A.equals("S")  &&  !A.equals("N"))) {
+            System.out.println(String.valueOf("Responda en mayusculas S o N"));
+        } else {
+            // Prioridad: estudiante con carne, o visitante autorizado
+            if (E.equals("S")) {
+                if (C.equals("S")) {
+                    System.out.println(String.valueOf("Acceso permitido"));
+                } else {
+                    System.out.println(String.valueOf("Acceso denegado: carne no vigente"));
+                }
+            } else {
+                if (A.equals("S")) {
+                    System.out.println(String.valueOf("Ingreso temporal autorizado"));
+                } else {
+                    System.out.println(String.valueOf("Acceso denegado"));
+                }
+            }
+        }
+    }
+}
