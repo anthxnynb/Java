@@ -1,0 +1,42 @@
+import java.util.Scanner;
+public class Ej_08_Descuento_comercio_tipo_cliente {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int C = 0;
+        double M = 0.0;
+        double D = 0.0;
+        double F = 0.0;
+
+        // Caso adicional 1: Descuento segun el tipo de cliente
+        // Fuente: Seleccion Anidada y Switch ampliada, caso adicional 1
+        System.out.println(String.valueOf("Tipo de cliente (1 == Estudiante, 2 == Empleado, 3 == General):"));
+        C = sc.nextInt();
+        System.out.println(String.valueOf("Ingrese el monto de compra:"));
+        M = sc.nextDouble();
+        // Se acepta solamente un tipo valido y un monto positivo
+        if (C >= 1  &&  C <= 3  &&  M > 0) {
+            // Descuento base mediante seleccion anidada
+            if (C == 1) {
+                D = 0.15;
+            } else {
+                if (C == 2) {
+                    D = 0.10;
+                } else {
+                    D = 0;
+                }
+            }
+            // Descuento adicional sobre el porcentaje inicial
+            if (M > 50) {
+                D = D + 0.05;
+            }
+            F = M * (1 - D);
+            System.out.println(String.valueOf("Descuento aplicado: ") + String.valueOf(D * 100) + String.valueOf("%"));
+            System.out.println(String.valueOf("Total a pagar: $") + String.valueOf(F));
+        } else {
+            System.out.println(String.valueOf("Tipo de cliente o monto no valido"));
+        }
+    }
+}
