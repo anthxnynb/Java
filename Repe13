@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Ej_13_pseudocodigo_Incremento_salarial_anual {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double S = 0.0;
+        int A = 0;
+
+        // Ejercicio: pseudocódigo Incremento salarial anual
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Proceso y cálculos
+        S = 1500;
+        A = 1;
+        while (A <= 6) {
+            S = S * 1.10;
+            // Entrada de datos y validaciones
+            System.out.println(String.valueOf("Salario al finalizar el año ") + String.valueOf(A) + String.valueOf(": $") + String.valueOf(S));
+            A = A + 1;
+        }
+        System.out.println(String.valueOf("Salario final despues de 6 años: $") + String.valueOf(S));
+    }
+}
