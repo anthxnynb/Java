@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Ej_05_Tarifa_de_parqueadero_de_estudiantes {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double H = 0.0;
+        double T = 0.0;
+        String E = "";
+
+        // Ejercicio: Tarifa de parqueadero de estudiantes
+        // Fuente: Semana 6, selección anidada
+        // Datos
+        System.out.println(String.valueOf("Horas de permanencia:"));
+        H = sc.nextDouble();
+        System.out.println(String.valueOf("Es estudiante UTPL? (S/N):"));
+        E = sc.next();
+        if (H < 0  ||  (!E.equals("S")  &&  !E.equals("N"))) {
+            System.out.println(String.valueOf("Datos invalidos"));
+        } else {
+            // Tarifa base: un dolar por hora
+            T = H * 1;
+            if (E.equals("S")) {
+                T = T * 0.50;
+                if (H > 4) {
+                    T = T * 1.20;
+                }
+            } else {
+                if (H > 6) {
+                    T = T * 1.20;
+                }
+            }
+            System.out.println(String.valueOf("Total a pagar: $") + String.valueOf(T));
+        }
+    }
+}
