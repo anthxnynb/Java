@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Ej_12_pseudocodigo_Par_o_Impar {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = 0;
+
+        // Ejercicio: pseudocódigo Par o Impar
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese un numero entero:"));
+        N = sc.nextInt();
+        // Proceso y cálculos
+        if (N % 2 == 0) {
+            System.out.println(String.valueOf("El numero es PAR"));
+        } else {
+            System.out.println(String.valueOf("El numero es IMPAR"));
+        }
+    }
+}
