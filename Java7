@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Ej_07_Clasificacion_notas_UTPL {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double N = 0.0;
+
+        // Ejemplo: Clasificacion de notas con seleccion anidada
+        // Fuente: Seleccion Anidada y Switch ampliada, ejemplo anidado 2
+        System.out.println(String.valueOf("Ingrese la nota (0 a 10):"));
+        N = sc.nextDouble();
+        // Primero comprobar el rango permitido
+        if (N >= 0  &&  N <= 10) {
+            if (N >= 9) {
+                System.out.println(String.valueOf("Excelente"));
+            } else {
+                if (N >= 7) {
+                    System.out.println(String.valueOf("Aprobado"));
+                } else {
+                    System.out.println(String.valueOf("Reprobado"));
+                }
+            }
+        } else {
+            System.out.println(String.valueOf("Nota fuera de rango"));
+        }
+    }
+}
