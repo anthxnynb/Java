@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Ej_15_pseudocodigo_Suma_de_numeros_hasta_ingresar_0 {
+    static String concat(Object a, Object b) { return String.valueOf(a) + String.valueOf(b); }
+    static String upper(String a) { return a.toUpperCase(); }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = 0;
+        int SUMA = 0;
+
+        // Ejercicio: pseudocódigo Suma de números hasta ingresar  0
+        // Fuente: ZIP original
+        // Variables y datos del problema
+        // Proceso y cálculos
+        SUMA = 0;
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese un numero (0 para terminar):"));
+        N = sc.nextInt();
+        while (N != 0) {
+            SUMA = SUMA + (N);
+            System.out.println(String.valueOf("Ingrese un numero (0 para terminar):"));
+            N = sc.nextInt();
+        }
+        System.out.println(String.valueOf("La suma total es: ") + String.valueOf(SUMA));
+    }
+}
